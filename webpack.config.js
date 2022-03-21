@@ -9,6 +9,7 @@ const {presets, plugins} = require(`${appDirectory}/babel.config.js`);
 const compileNodeModules = [
   // Add every react-native package that needs compiling
   // 'react-native-gesture-handler',
+  'react-native-reanimated',
 ].map((moduleName) => path.resolve(appDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
@@ -51,9 +52,10 @@ const imageLoaderConfiguration = {
 };
 
 module.exports = {
-  entry: {
-    app: path.join(__dirname, 'index.web.js'),
-  },
+  entry: [
+    'babel-polyfill',
+    './index.web.js'
+  ],
   output: {
     path: path.resolve(appDirectory, 'dist'),
     publicPath: '/',
@@ -81,6 +83,7 @@ module.exports = {
     new webpack.DefinePlugin({
       // See: https://github.com/necolas/react-native-web/issues/349
       __DEV__: JSON.stringify(true),
+      process: { env: {} }
     }),
   ],
 };
