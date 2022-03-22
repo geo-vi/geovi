@@ -10,38 +10,43 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "web": "webpack serve --mode=development --config webpack.config.js"
+    "web": "webpack serve --config webpack.dev.js --open",
+    "web:build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
-    "react-native": "0.66.3",
+    "react-native": "^0.68.0-rc.3",
     "react-native-reanimated": "^2.5.0",
-    "react-native-web": "^0.17.5",
-    "styled-components": "^5.3.3"
+    "react-native-web": "^0.17.7",
+    "styled-components": "^5.3.3",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/runtime": "^7.12.5",
+    "@babel/core": "^7.17.8",
+    "@babel/runtime": "^7.17.8",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
-    "@types/react-native": "^0.66.4",
+    "@types/react-native": "^0.67.3",
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.15",
-    "babel-jest": "^26.6.3",
-    "babel-loader": "^8.2.3",
-    "babel-plugin-react-native-web": "^0.17.5",
+    "babel-jest": "^27.5.1",
+    "babel-loader": "^8.2.4",
+    "babel-plugin-react-native-web": "^0.17.7",
     "babel-polyfill": "^6.26.0",
     "eslint": "^7.14.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.66.2",
+    "metro-react-native-babel-preset": "^0.69.1",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4",
     "url-loader": "^4.1.1",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "resolutions": {
     "@types/react": "^17"
