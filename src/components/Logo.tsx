@@ -1,9 +1,14 @@
 import React from 'react';
 import Svg, {G, Path, Rect, Text, TSpan, Line} from 'react-native-svg';
 
-function Logo() {
+type LogoTypes = {
+  width: number | string;
+  height: number | string;
+};
+
+function Logo({width, height}: LogoTypes) {
   return (
-    <Svg width="450" height="270" viewBox="0 0 450 270">
+    <Svg width={width} height={height} viewBox="0 0 450 270">
       <G transform="translate(-735 -425)">
         <G transform="translate(-45.75 -1)">
           <Path
