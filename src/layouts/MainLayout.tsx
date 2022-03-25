@@ -18,7 +18,7 @@ const MainContainer = styled(View)`
 const VerticalProgression = styled(View)`
   height: 100%;
   width: 10px;
-  background: #171717;
+  background: #2a2a2a;
 `;
 
 const SidebarContainer = styled(View)`
@@ -26,6 +26,29 @@ const SidebarContainer = styled(View)`
   width: 450px;
   top: 0;
   left: 10px;
+  padding-top: 120px;
+  z-index: 10;
+`;
+
+const SidebarSectionContainer = styled(View)`
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+`;
+
+const SidebarSectionLeed = styled(View)`
+  background-color: #2a2a2a;
+  height: 2px;
+  flex: 1;
+`;
+
+const SidebarLabel = styled(Text)`
+  font-size: 28px;
+  font-family: 'SF Pro Display';
+  font-weight: 300;
+  color: white;
+  padding: 20px;
 `;
 
 const HelperContainer = styled(Animated.View)`
@@ -74,7 +97,28 @@ function MainLayout({
       <VerticalProgression>
         <ProgressBar progress={progress} />
       </VerticalProgression>
-      <SidebarContainer />
+      <SidebarContainer>
+        <SidebarSectionContainer>
+          <SidebarSectionLeed />
+          <SidebarLabel>Who?</SidebarLabel>
+        </SidebarSectionContainer>
+        <SidebarSectionContainer style={{width: '80%'}}>
+          <SidebarSectionLeed />
+          <SidebarLabel>What?</SidebarLabel>
+        </SidebarSectionContainer>
+        <SidebarSectionContainer style={{width: '60%'}}>
+          <SidebarSectionLeed />
+          <SidebarLabel>When?</SidebarLabel>
+        </SidebarSectionContainer>
+        <SidebarSectionContainer style={{width: '40%'}}>
+          <SidebarSectionLeed />
+          <SidebarLabel>Where?</SidebarLabel>
+        </SidebarSectionContainer>
+        <SidebarSectionContainer style={{width: '20%'}}>
+          <SidebarSectionLeed />
+          <SidebarLabel>Why?</SidebarLabel>
+        </SidebarSectionContainer>
+      </SidebarContainer>
       <HelperContainer style={helperContainerAnimatedStyle}>
         <HelperText>Scroll to see more</HelperText>
       </HelperContainer>
