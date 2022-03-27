@@ -29,7 +29,7 @@ function WhoPage({index}: PageTypes) {
     maxWidth: 500,
     width: '100%',
     marginHorizontal: 30,
-    height: 300,
+    height: 200,
     alignItems: 'center',
     transform: [
       {

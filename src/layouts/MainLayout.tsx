@@ -40,10 +40,10 @@ function MainLayout({
       <VerticalProgression>
         <ProgressBar progress={progress} />
       </VerticalProgression>
-      {/*<Sidebar />*/}
-      {/*<HelperContainer style={helperContainerAnimatedStyle}>*/}
-      {/*  <HelperText>Scroll to see more</HelperText>*/}
-      {/*</HelperContainer>*/}
+      <Sidebar />
+      <HelperContainer style={helperContainerAnimatedStyle}>
+        <HelperText>Scroll to see more</HelperText>
+      </HelperContainer>
       {children}
     </MainContainer>
   );
