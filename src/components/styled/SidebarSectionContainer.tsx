@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {View} from 'react-native';
+import Animated from 'react-native-reanimated';
 
-const SidebarSectionContainer = styled(View)`
+const SidebarSectionContainer = styled(Animated.View)`
   width: 100%;
   flex-direction: row;
   align-items: center;

@@ -1,10 +1,9 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren, useContext} from 'react';
 import ProgressBar from '../components/ProgressBar';
 import {SidebarProgression} from '../types/SidebarProgression';
 import {
   Extrapolate,
   interpolate,
-  SharedValue,
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import {
@@ -14,16 +13,14 @@ import {
   VerticalProgression,
 } from '../components/styled';
 import Sidebar from '../components/Sidebar';
-
-type MainLayoutTypes = {
-  y: SharedValue<number>;
-};
+import VerticalPositionContext from '../context/VerticalPositionContext';
 
 function MainLayout({
   children,
   progress,
-  y,
-}: PropsWithChildren<SidebarProgression & MainLayoutTypes>) {
+}: PropsWithChildren<SidebarProgression>) {
+  const y = useContext(VerticalPositionContext);
+
   const helperContainerAnimatedStyle = useAnimatedStyle(() => {
     const left = interpolate(y.value, [0, 400], [0, -500], {
       extrapolateRight: Extrapolate.CLAMP,
@@ -43,10 +40,10 @@ function MainLayout({
       <VerticalProgression>
         <ProgressBar progress={progress} />
       </VerticalProgression>
-      <Sidebar />
-      <HelperContainer style={helperContainerAnimatedStyle}>
-        <HelperText>Scroll to see more</HelperText>
-      </HelperContainer>
+      {/*<Sidebar />*/}
+      {/*<HelperContainer style={helperContainerAnimatedStyle}>*/}
+      {/*  <HelperText>Scroll to see more</HelperText>*/}
+      {/*</HelperContainer>*/}
       {children}
     </MainContainer>
   );

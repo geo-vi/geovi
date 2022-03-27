@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {View} from 'react-native';
+import Animated from 'react-native-reanimated';
 
-const SidebarSectionLeed = styled(View)`
+const SidebarSectionLeed = styled(Animated.View)`
   background-color: #2a2a2a;
   height: 2px;
   flex: 1;

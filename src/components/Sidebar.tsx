@@ -1,34 +1,17 @@
 import React from 'react';
 import {
   SidebarContainer,
-  SidebarLabel,
-  SidebarSectionContainer,
-  SidebarSectionLeed,
 } from './styled';
+import SidebarSection from './SidebarSection';
 
 function Sidebar() {
   return (
     <SidebarContainer>
-      <SidebarSectionContainer>
-        <SidebarSectionLeed />
-        <SidebarLabel>Who?</SidebarLabel>
-      </SidebarSectionContainer>
-      <SidebarSectionContainer style={{width: '80%'}}>
-        <SidebarSectionLeed />
-        <SidebarLabel>What?</SidebarLabel>
-      </SidebarSectionContainer>
-      <SidebarSectionContainer style={{width: '60%'}}>
-        <SidebarSectionLeed />
-        <SidebarLabel>When?</SidebarLabel>
-      </SidebarSectionContainer>
-      <SidebarSectionContainer style={{width: '40%'}}>
-        <SidebarSectionLeed />
-        <SidebarLabel>Where?</SidebarLabel>
-      </SidebarSectionContainer>
-      <SidebarSectionContainer style={{width: '20%'}}>
-        <SidebarSectionLeed />
-        <SidebarLabel>How?</SidebarLabel>
-      </SidebarSectionContainer>
+      <SidebarSection label={'Who?'} index={1} offset={'100%'} />
+      <SidebarSection label={'What?'} index={2} offset={'80%'} />
+      <SidebarSection label={'When?'} index={3} offset={'60%'} />
+      <SidebarSection label={'Where?'} index={4} offset={'40%'} />
+      <SidebarSection label={'How?'} index={5} offset={'20%'} />
     </SidebarContainer>
   );
 }

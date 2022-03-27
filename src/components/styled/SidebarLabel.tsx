@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import {Text} from 'react-native';
+import Animated from 'react-native-reanimated';
 
-const SidebarLabel = styled(Text)`
+const SidebarLabel = styled(Animated.Text)`
   font-size: 28px;
   font-family: 'SF Pro Display';
   font-weight: 300;
-  color: white;
+  color: #2a2a2a;
   padding: 20px;
 `;
 

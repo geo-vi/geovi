@@ -8,6 +8,7 @@ import {
   useAnimatedScrollHandler,
   useSharedValue,
 } from 'react-native-reanimated';
+import VerticalPositionContext from './context/VerticalPositionContext';
 
 const {height} = Dimensions.get('window');
 
@@ -30,9 +31,11 @@ const App = () => {
   return (
     <React.Fragment>
       <StatusBar barStyle="dark-content" />
-      <MainLayout y={y} progress={progress}>
-        <Home onScroll={scrollHandler} />
-      </MainLayout>
+      <VerticalPositionContext.Provider value={y}>
+        <MainLayout progress={progress}>
+          <Home onScroll={scrollHandler} />
+        </MainLayout>
+      </VerticalPositionContext.Provider>
     </React.Fragment>
   );
 };

@@ -1,8 +1,8 @@
 import {Text} from 'react-native';
 import React, {useRef} from 'react';
-import Logo from '../components/Logo';
 import Page from '../components/styled/Page';
 import Animated from 'react-native-reanimated';
+import {Landing, Who} from './pages';
 
 type HomeTypes = {
   onScroll: any;
@@ -16,12 +16,9 @@ function Home({onScroll}: HomeTypes) {
       ref={scrollViewRef}
       scrollEventThrottle={16} // ~60 events per second
       onScroll={onScroll}>
-      <Page style={{alignItems: 'center', justifyContent: 'center'}}>
-        <Logo width={450} height={'100%'} />
-      </Page>
-      <Page />
-      <Page />
-      <Page />
+      <Landing index={0} />
+      <Who index={1} />
+      <Page style={{backgroundColor: 'pink'}} />
       <Page />
       <Page />
       <Page style={{alignItems: 'center', justifyContent: 'center'}}>
