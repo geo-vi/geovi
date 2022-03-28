@@ -5,13 +5,13 @@ const webpack = require('webpack');
 module.exports = {
   entry: ['babel-polyfill', './index.web.js'],
   output: {
-    path: path.resolve(__dirname, './release'),
+    path: path.resolve(__dirname, './web/release'),
     filename: 'bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './index.html',
+      template: './web/index.html',
     }),
     new webpack.DefinePlugin({
       process: {env: {}},
