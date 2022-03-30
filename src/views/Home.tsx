@@ -2,7 +2,7 @@ import {Text} from 'react-native';
 import React, {useRef} from 'react';
 import Page from '../components/styled/Page';
 import Animated from 'react-native-reanimated';
-import {Landing, Who} from './pages';
+import {Landing, Who, What} from './pages';
 
 type HomeTypes = {
   onScroll: any;
@@ -18,8 +18,7 @@ function Home({onScroll}: HomeTypes) {
       onScroll={onScroll}>
       <Landing index={0} />
       <Who index={1} />
-      <Page style={{backgroundColor: 'pink'}} />
-      <Page />
+      <What index={2} />
       <Page />
       <Page style={{alignItems: 'center', justifyContent: 'center'}}>
         <Text style={{color: 'white'}}>Last page</Text>

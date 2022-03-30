@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar, Dimensions} from 'react-native';
+import {StatusBar, useWindowDimensions} from 'react-native';
 import Home from './views/Home';
 import MainLayout from './layouts/MainLayout';
 import {
@@ -9,10 +9,11 @@ import {
   useSharedValue,
 } from 'react-native-reanimated';
 import VerticalPositionContext from './context/VerticalPositionContext';
-
-const {height} = Dimensions.get('window');
+import MobileLayout from './layouts/MobileLayout';
 
 const App = () => {
+  const { height, width } = useWindowDimensions();
+
   const y = useSharedValue(0);
 
   const progress = useSharedValue(0);
@@ -28,13 +29,15 @@ const App = () => {
       (interpolatedHeight + event.contentOffset.y) / event.contentSize.height;
   });
 
+  const AbstractLayout = width > 1350 ? MainLayout : MobileLayout;
+
   return (
     <React.Fragment>
       <StatusBar barStyle="dark-content" />
       <VerticalPositionContext.Provider value={y}>
-        <MainLayout progress={progress}>
+        <AbstractLayout progress={progress}>
           <Home onScroll={scrollHandler} />
-        </MainLayout>
+        </AbstractLayout>
       </VerticalPositionContext.Provider>
     </React.Fragment>
   );

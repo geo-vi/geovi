@@ -9,6 +9,7 @@ import {Dimensions, StyleSheet, Text} from 'react-native';
 import PageTypes from '../../types/PageTypes';
 import useScrollProgression from '../../hooks/useScrollProgression';
 import Icon from 'react-native-vector-icons/dist/Feather';
+import FABrandIcon from 'react-native-vector-icons/dist/FontAwesome5';
 
 const {width, height} = Dimensions.get('window');
 
@@ -19,8 +20,12 @@ function WhoPage({index}: PageTypes) {
 
   const titleStyle = useAnimatedStyle(
     () => ({
-      color: 'white',
-      fontSize: interpolate(progress.value, [0, 100], [12, 64]),
+      fontSize: 64,
+      transform: [
+        {
+          scale: interpolate(progress.value, [0, 100], [0.3, 1]),
+        },
+      ],
     }),
     [progress],
   );
@@ -29,7 +34,7 @@ function WhoPage({index}: PageTypes) {
     maxWidth: 500,
     width: '100%',
     marginHorizontal: 30,
-    height: 200,
+    height: 350,
     alignItems: 'center',
     transform: [
       {
@@ -76,17 +81,38 @@ function WhoPage({index}: PageTypes) {
           passionate about what I am doing when I have the opportunity make a
           memorable change for the better.
         </Text>
+        <Text style={styles.paragraph}>
+          As freebie I always enjoyed architecture & design, I often find myself
+          practicing it over weekends, often the case is sketching up a project
+          in Adobe Xd and Illustrator. {'\n'}
+          Happily at some projects that freebie came to use and at IKARUS I also
+          did the UI/UX as part of my full-time job.
+        </Text>
       </Animated.View>
       <Animated.View style={linkContainerStyle}>
         <Icon style={styles.link} name={'link'} size={14} color={'white'} />
         <Text style={styles.linkedin}>
-          <Icon name={'linkedin'} size={20} color="white" />
+          <Icon
+            name={'linkedin'}
+            size={20}
+            color="white"
+            style={styles.linkIcon}
+          />
           /g-ivanov
         </Text>
       </Animated.View>
       <Animated.View style={linkContainerStyle}>
         <Icon style={styles.link} name={'link'} size={14} color={'white'} />
-        <Text style={styles.linkedin}>medium.com/@geovi</Text>
+        <Text style={styles.linkedin}>
+          <FABrandIcon
+            name={'medium'}
+            size={20}
+            color="white"
+            brands
+            style={styles.linkIcon}
+          />
+          /@geovi
+        </Text>
       </Animated.View>
     </Page>
   );
@@ -114,6 +140,9 @@ const styles = StyleSheet.create({
   },
   link: {
     margin: 5,
+  },
+  linkIcon: {
+    marginRight: 5,
   },
 });
 
