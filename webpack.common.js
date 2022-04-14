@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './index.web.js'],
@@ -15,6 +16,9 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       process: {env: {}},
+    }),
+    new CopyPlugin({
+      patterns: [{from: 'web/ext', to: 'ext'}],
     }),
   ],
   module: {
@@ -39,7 +43,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
-        include: path.resolve(__dirname, "node_modules/react-native-vector-icons"),
+        include: path.resolve(
+          __dirname,
+          'node_modules/react-native-vector-icons',
+        ),
       },
     ],
   },

@@ -40,6 +40,7 @@
     "babel-loader": "^8.2.4",
     "babel-plugin-react-native-web": "^0.17.7",
     "babel-polyfill": "^6.26.0",
+    "copy-webpack-plugin": "^10.2.4",
     "eslint": "^7.14.0",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
