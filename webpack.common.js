@@ -55,6 +55,6 @@ module.exports = {
       'react-native$': 'react-native-web',
       'styled-components': 'styled-components/native',
     },
-    extensions: ['.web.js', '.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.web.tsx', '.web.js', '.js', '.jsx', '.ts', '.tsx'],
   },
 };
