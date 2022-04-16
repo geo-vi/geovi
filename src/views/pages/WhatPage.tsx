@@ -9,7 +9,8 @@ import Animated, {
 import useScrollProgression from '../../hooks/useScrollProgression';
 import {Dimensions, StyleSheet, View, Text} from 'react-native';
 import Technologies from '../../components/Technologies';
-import Icon from "react-native-vector-icons/dist/Feather";
+// @ts-ignore
+import Icon from 'react-native-vector-icons/dist/Feather';
 
 const {height} = Dimensions.get('window');
 
@@ -43,11 +44,26 @@ function WhatPage({index}: PageTypes) {
         <Animated.View style={linkContainerStyle}>
           <Icon style={styles.link} name={'link'} size={14} color={'white'} />
           <Text style={styles.linkedin}>
-            <Icon name={'github'} size={20} color="white" style={styles.linkIcon} />
+            <Icon
+              name={'github'}
+              size={20}
+              color="white"
+              style={styles.linkIcon}
+            />
             /geo-vi
           </Text>
         </Animated.View>
-        <Technologies stack={['react', 'java', 'python', 'docker', 'gitlab', 'aws', 'figma']} />
+        <Technologies
+          stack={[
+            'react',
+            'java',
+            'python',
+            'docker',
+            'gitlab',
+            'aws',
+            'figma',
+          ]}
+        />
         <Text style={styles.paragraph}>
           At Snooper UG the tech stack that we worked with was Spring Boot for
           Backend, React Native for Mobile Application, React JS for internal
@@ -86,14 +102,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontFamily: 'SF Pro Display',
     fontWeight: '700',
     color: 'white',
     fontSize: 60,
     marginHorizontal: 30,
   },
   paragraph: {
-    fontFamily: 'SF Pro Display',
     color: 'white',
     margin: 5,
   },
@@ -104,7 +118,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   linkedin: {
-    fontFamily: 'SF Pro Display',
     color: 'white',
     fontWeight: '500',
     fontSize: 20,

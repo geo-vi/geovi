@@ -43,10 +43,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
-        include: path.resolve(
-          __dirname,
-          'node_modules/react-native-vector-icons',
-        ),
+        include: [
+          path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+          path.resolve(__dirname, 'src/assets/font'),
+        ],
       },
     ],
   },

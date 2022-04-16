@@ -1,7 +1,6 @@
-import React, {PropsWithChildren, useContext} from 'react';
+import React, {PropsWithChildren} from 'react';
 import {MainContainer, VerticalProgression} from '../components/styled';
 import ProgressBar from '../components/ProgressBar';
-import VerticalPositionContext from '../context/VerticalPositionContext';
 import {SidebarProgression} from '../types/SidebarProgression';
 
 function MobileLayout({

@@ -30,7 +30,7 @@ function Logo({width, height}: LogoTypes) {
           />
           <Text
             fill="#fff"
-            fontFamily="SFProDisplay-Ultralight, SF Pro Display"
+            // fontFamily="SFProDisplay-Ultralight, SF Pro Display"
             fontWeight="100"
             fontSize="120px"
             transform="translate(781 540)">
@@ -40,7 +40,7 @@ function Logo({width, height}: LogoTypes) {
           </Text>
           <Text
             fill="#fff"
-            fontFamily="SFProDisplay-Ultralight, SF Pro Display"
+            // fontFamily="SFProDisplay-Ultralight, SF Pro Display"
             fontWeight="100"
             fontSize="80px"
             transform="translate(1040 663)">

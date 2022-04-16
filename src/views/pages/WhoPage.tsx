@@ -8,7 +8,9 @@ import Page from '../../components/styled/Page';
 import {Dimensions, StyleSheet, Text} from 'react-native';
 import PageTypes from '../../types/PageTypes';
 import useScrollProgression from '../../hooks/useScrollProgression';
+// @ts-ignore
 import Icon from 'react-native-vector-icons/dist/Feather';
+// @ts-ignore
 import FABrandIcon from 'react-native-vector-icons/dist/FontAwesome5';
 
 const {width, height} = Dimensions.get('window');
@@ -123,17 +125,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontFamily: 'SF Pro Display',
+    // fontFamily: 'SF Pro Display',
     fontWeight: '700',
     color: 'white',
   },
   paragraph: {
-    fontFamily: 'SF Pro Display',
+    // fontFamily: 'SF Pro Display',
     color: 'white',
     margin: 5,
   },
   linkedin: {
-    fontFamily: 'SF Pro Display',
+    // fontFamily: 'SF Pro Display',
     color: 'white',
     fontWeight: '500',
     fontSize: 20,

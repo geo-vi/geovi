@@ -25,6 +25,7 @@ function Technologies({stack}: TechnologiesTypes) {
 
 const styles = StyleSheet.create({
   technologies: {
+    flexWrap: 'wrap',
     flexDirection: 'row',
   },
   icon: {

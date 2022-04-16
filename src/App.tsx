@@ -10,9 +10,15 @@ import {
 } from 'react-native-reanimated';
 import VerticalPositionContext from './context/VerticalPositionContext';
 import MobileLayout from './layouts/MobileLayout';
+import {useResponsiveViewConditional} from './hooks/useResponsiveViewConditional';
 
 const App = () => {
-  const { height, width } = useWindowDimensions();
+  const {height} = useWindowDimensions();
+
+  const AbstractLayout = useResponsiveViewConditional([
+    MainLayout,
+    MobileLayout,
+  ]);
 
   const y = useSharedValue(0);
 
@@ -28,8 +34,6 @@ const App = () => {
     progress.value =
       (interpolatedHeight + event.contentOffset.y) / event.contentSize.height;
   });
-
-  const AbstractLayout = width > 1350 ? MainLayout : MobileLayout;
 
   return (
     <React.Fragment>
