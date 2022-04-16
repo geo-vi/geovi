@@ -5,6 +5,10 @@ import App from './src/App';
 import featherIconFont from 'react-native-vector-icons/Fonts/Feather.ttf';
 import fontAwesomeBrandsFont from 'react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf';
 
+import mapboxgl from '!mapbox-gl';
+
+mapboxgl.accessToken =
+  'pk.eyJ1IjoiZ2VvdmkiLCJhIjoiY2t0cjdueGloMTNlNjJub2FjNGpwcmhpcCJ9.gJycDTLo9wUE48akhs1UEQ';
 
 const iconFontStyles = `@font-face {
   src: url(${featherIconFont});

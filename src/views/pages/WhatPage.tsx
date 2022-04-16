@@ -106,6 +106,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 60,
     marginHorizontal: 30,
+    maxWidth: '60vw',
+    textAlign: 'center',
   },
   paragraph: {
     color: 'white',

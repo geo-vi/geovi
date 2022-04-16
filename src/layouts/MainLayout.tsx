@@ -11,6 +11,7 @@ import {
   HelperText,
   MainContainer,
   VerticalProgression,
+  WorkTogetherText,
 } from '../components/styled';
 import Sidebar from '../components/Sidebar';
 import VerticalPositionContext from '../context/VerticalPositionContext';
@@ -44,6 +45,7 @@ function MainLayout({
       <HelperContainer style={helperContainerAnimatedStyle}>
         <HelperText>Scroll to see more</HelperText>
       </HelperContainer>
+      <WorkTogetherText>Let's work together!</WorkTogetherText>
       {children}
     </MainContainer>
   );

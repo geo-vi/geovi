@@ -10,6 +10,8 @@ import SidebarLabel from './SidebarLabel';
 
 import VerticalProgression from './VerticalProgression';
 
+import WorkTogetherText from './WorkTogetherText';
+
 export {
   HelperText,
   HelperContainer,
@@ -19,4 +21,5 @@ export {
   SidebarSectionLeed,
   SidebarLabel,
   MainContainer,
+  WorkTogetherText,
 };

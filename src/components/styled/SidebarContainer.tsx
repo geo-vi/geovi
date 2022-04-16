@@ -3,7 +3,8 @@ import {View} from 'react-native';
 
 const SidebarContainer = styled(View)`
   position: absolute;
-  width: 450px;
+  max-width: 450px;
+  width: 25%;
   top: 0;
   left: 10px;
   padding-top: 120px;
