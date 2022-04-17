@@ -45,8 +45,8 @@ function MainLayout({
       <HelperContainer style={helperContainerAnimatedStyle}>
         <HelperText>Scroll to see more</HelperText>
       </HelperContainer>
-      <WorkTogetherText>Let's work together!</WorkTogetherText>
       {children}
+      <WorkTogetherText>Let's work together!</WorkTogetherText>
     </MainContainer>
   );
 }

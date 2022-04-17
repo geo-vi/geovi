@@ -37,7 +37,7 @@ function WhatPage({index}: PageTypes) {
 
   return (
     <Page style={styles.page}>
-      <Animated.Text style={[styles.title, titleStyle]}>
+      <Animated.Text adjustsFontSizeToFit style={[styles.title, titleStyle]}>
         What projects and technology stacks have I worked with?
       </Animated.Text>
       <View style={styles.projectContainer}>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: '700',
     color: 'white',
-    fontSize: 60,
+    fontSize: 24,
     marginHorizontal: 30,
     maxWidth: '60vw',
     textAlign: 'center',
