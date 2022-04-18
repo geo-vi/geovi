@@ -22,9 +22,12 @@ function WherePage({index}: PageTypes) {
   const progress = useScrollProgression(index, height);
 
   const animatedMyselfStyles = useAnimatedStyle(() => ({
+    opacity: interpolate(progress.value, [50, 80], [0, 1], {
+      extrapolateRight: Extrapolation.CLAMP,
+    }),
     transform: [
       {
-        translateX: interpolate(progress.value, [50, 80], [-1000, 0], {
+        translateX: interpolate(progress.value, [50, 80], [-500, 0], {
           extrapolateRight: Extrapolation.CLAMP,
         }),
       },

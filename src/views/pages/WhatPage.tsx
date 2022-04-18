@@ -40,30 +40,22 @@ function WhatPage({index}: PageTypes) {
       <Animated.Text adjustsFontSizeToFit style={[styles.title, titleStyle]}>
         What projects and technology stacks have I worked with?
       </Animated.Text>
+      <Animated.View style={linkContainerStyle}>
+        <Icon style={styles.link} name={'link'} size={14} color={'white'} />
+        <Text style={styles.linkedin}>
+          <Icon
+            name={'github'}
+            size={20}
+            color="white"
+            style={styles.linkIcon}
+          />
+          /geo-vi
+        </Text>
+      </Animated.View>
+      <Technologies
+        stack={['react', 'java', 'python', 'docker', 'gitlab', 'aws', 'figma']}
+      />
       <View style={styles.projectContainer}>
-        <Animated.View style={linkContainerStyle}>
-          <Icon style={styles.link} name={'link'} size={14} color={'white'} />
-          <Text style={styles.linkedin}>
-            <Icon
-              name={'github'}
-              size={20}
-              color="white"
-              style={styles.linkIcon}
-            />
-            /geo-vi
-          </Text>
-        </Animated.View>
-        <Technologies
-          stack={[
-            'react',
-            'java',
-            'python',
-            'docker',
-            'gitlab',
-            'aws',
-            'figma',
-          ]}
-        />
         <Text style={styles.paragraph}>
           At Snooper UG the tech stack that we worked with was Spring Boot for
           Backend, React Native for Mobile Application, React JS for internal
@@ -115,7 +107,7 @@ const styles = StyleSheet.create({
   },
   projectContainer: {
     alignItems: 'center',
-    marginVertical: 20,
+    marginVertical: 10,
     maxWidth: 500,
     width: '100%',
   },
