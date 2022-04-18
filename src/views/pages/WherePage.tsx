@@ -53,8 +53,11 @@ function WherePage({index}: PageTypes) {
             }}
             style={{width: 288, height: 54}}
           />
-          <Image source={{uri: 'https://avatars.githubusercontent.com/u/67278693?s=200&v=4'}}
-              style={{width: 60, height: 60, tintColor: 'white'}}
+          <Image
+            source={{
+              uri: 'https://avatars.githubusercontent.com/u/67278693?s=200&v=4',
+            }}
+            style={{width: 60, height: 60, tintColor: 'white'}}
           />
         </View>
       </View>
