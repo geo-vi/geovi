@@ -5,15 +5,19 @@ import Icon from 'react-native-vector-icons/dist/Feather';
 
 type MobileHeaderTypes = {
   onPressMenuButton: any;
+  onPressWorkTogether: any;
 };
 
-function MobileHeader({onPressMenuButton}: MobileHeaderTypes) {
+function MobileHeader({
+  onPressMenuButton,
+  onPressWorkTogether,
+}: MobileHeaderTypes) {
   return (
     <View style={styles.container}>
       <Pressable style={styles.pressable} onPress={onPressMenuButton}>
         <Icon name={'menu'} size={34} color={'white'} />
       </Pressable>
-      <Pressable style={styles.button}>
+      <Pressable style={styles.button} onPress={onPressWorkTogether}>
         <Text style={styles.buttonLabel}>Let’s work together!</Text>
       </Pressable>
     </View>
@@ -39,7 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderRadius: 30,
+    borderRadius: 5,
   },
   buttonLabel: {
     fontWeight: 'bold',

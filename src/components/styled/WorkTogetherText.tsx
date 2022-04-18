@@ -2,12 +2,9 @@ import styled from 'styled-components';
 import {Text} from 'react-native';
 
 const WorkTogetherText = styled(Text)`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
+  color: black;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
 `;
 
 export default WorkTogetherText;

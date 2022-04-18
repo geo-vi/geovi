@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import mapboxgl from '!mapbox-gl';
 import {Dimensions, StyleSheet, Text, View, Pressable} from 'react-native';
 import Animated, {
@@ -143,8 +143,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   wrapper: {
-    position: 'absolute', top: 0
-  }
+    position: 'absolute',
+    top: 0,
+  },
 });
 
 export default Map;

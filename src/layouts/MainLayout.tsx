@@ -1,52 +1,34 @@
-import React, {PropsWithChildren, useContext} from 'react';
+import React, {PropsWithChildren} from 'react';
 import ProgressBar from '../components/ProgressBar';
 import {SidebarProgression} from '../types/SidebarProgression';
 import {
-  Extrapolate,
-  interpolate,
-  useAnimatedStyle,
-} from 'react-native-reanimated';
-import {
-  HelperContainer,
-  HelperText,
   MainContainer,
   VerticalProgression,
+  WorkTogetherButton,
   WorkTogetherText,
 } from '../components/styled';
 import Sidebar from '../components/Sidebar';
-import VerticalPositionContext from '../context/VerticalPositionContext';
+import {AbstractLayoutTypes} from '../types/AbstractLayoutTypes';
 
 function MainLayout({
   children,
   progress,
-}: PropsWithChildren<SidebarProgression>) {
-  const y = useContext(VerticalPositionContext);
-
-  const helperContainerAnimatedStyle = useAnimatedStyle(() => {
-    const left = interpolate(y.value, [0, 400], [0, -500], {
-      extrapolateRight: Extrapolate.CLAMP,
-    });
-
-    return {
-      transform: [
-        {
-          translateX: left,
-        },
-      ],
-    };
-  });
+  onPageTravel,
+}: PropsWithChildren<SidebarProgression & AbstractLayoutTypes>) {
+  function onPressWorkTogether() {
+    onPageTravel(4);
+  }
 
   return (
     <MainContainer>
       <VerticalProgression>
         <ProgressBar progress={progress} />
       </VerticalProgression>
-      <Sidebar />
-      <HelperContainer style={helperContainerAnimatedStyle}>
-        <HelperText>Scroll to see more</HelperText>
-      </HelperContainer>
+      <Sidebar onPageTravel={onPageTravel} />
       {children}
-      <WorkTogetherText>Let's work together!</WorkTogetherText>
+      <WorkTogetherButton onPress={onPressWorkTogether}>
+        <WorkTogetherText>Let's work together!</WorkTogetherText>
+      </WorkTogetherButton>
     </MainContainer>
   );
 }

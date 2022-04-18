@@ -1,30 +1,28 @@
-import {Text} from 'react-native';
-import React, {useRef} from 'react';
-import Page from '../components/styled/Page';
-import Animated from 'react-native-reanimated';
-import {Landing, Who, What} from './pages';
-import WherePage from "./pages/WherePage";
+import {ListRenderItemInfo} from 'react-native';
+import React from 'react';
+import AnimatedFlatList from '../components/AnimatedFlatList';
+import PageData from '../constants/Pages';
 
 type HomeTypes = {
   onScroll: any;
+  flatListRef: React.Ref<any>;
 };
 
-function Home({onScroll}: HomeTypes) {
-  const scrollViewRef = useRef<any>();
+function Home({onScroll, flatListRef}: HomeTypes) {
+  function renderItem(itemInfo: ListRenderItemInfo<any>) {
+    const ItemPage = itemInfo.item;
+
+    return <ItemPage index={itemInfo.index} />;
+  }
 
   return (
-    <Animated.ScrollView
-      ref={scrollViewRef}
+    <AnimatedFlatList
+      ref={flatListRef}
       scrollEventThrottle={16} // ~60 events per second
-      onScroll={onScroll}>
-      <Landing index={0} />
-      <Who index={1} />
-      <What index={2} />
-      <WherePage index={3} />
-      <Page style={{alignItems: 'center', justifyContent: 'center'}}>
-        <Text style={{color: 'white'}}>Last page</Text>
-      </Page>
-    </Animated.ScrollView>
+      onScroll={onScroll}
+      data={PageData}
+      renderItem={renderItem}
+    />
   );
 }
 

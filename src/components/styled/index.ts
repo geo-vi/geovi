@@ -11,6 +11,7 @@ import SidebarLabel from './SidebarLabel';
 import VerticalProgression from './VerticalProgression';
 
 import WorkTogetherText from './WorkTogetherText';
+import WorkTogetherButton from './WorkTogetherButton';
 
 export {
   HelperText,
@@ -22,4 +23,5 @@ export {
   SidebarLabel,
   MainContainer,
   WorkTogetherText,
+  WorkTogetherButton,
 };

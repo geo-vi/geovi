@@ -19,7 +19,7 @@ function WhatPage({index}: PageTypes) {
 
   const titleStyle = useAnimatedStyle(
     () => ({
-      opacity: interpolate(progress.value, [0, 100], [0, 1], {
+      opacity: interpolate(progress.value, [0, 50], [0, 1], {
         extrapolateRight: Extrapolation.CLAMP,
       }),
     }),

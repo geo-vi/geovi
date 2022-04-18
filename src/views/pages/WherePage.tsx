@@ -2,7 +2,7 @@ import React from 'react';
 import Page from '../../components/styled/Page';
 import Map from '../../components/Map';
 import PageTypes from '../../types/PageTypes';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import {useResponsiveViewConditional} from '../../hooks/useResponsiveViewConditional';
 import Animated, {
   Extrapolation,
@@ -10,6 +10,8 @@ import Animated, {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import useScrollProgression from '../../hooks/useScrollProgression';
+import Companies from '../../components/Companies';
+import MobileCompanies from '../../components/MobileCompanies';
 
 const {height} = Dimensions.get('window');
 
@@ -19,52 +21,52 @@ function WherePage({index}: PageTypes) {
     styles.columnPageContainer,
   ]);
 
+  const ResponsiveCompanies = useResponsiveViewConditional([
+    Companies,
+    MobileCompanies,
+  ]);
+
   const progress = useScrollProgression(index, height);
 
-  const animatedMyselfStyles = useAnimatedStyle(() => ({
-    opacity: interpolate(progress.value, [50, 80], [0, 1], {
-      extrapolateRight: Extrapolation.CLAMP,
+  // const animatedMyselfStyles = useAnimatedStyle(() => ({
+  //   opacity: interpolate(progress.value, [0, 50], [0, 1], {
+  //     extrapolateRight: Extrapolation.CLAMP,
+  //   }),
+  //   transform: [
+  //     {
+  //       translateX: interpolate(progress.value, [0, 50], [-500, 0], {
+  //         extrapolateRight: Extrapolation.CLAMP,
+  //       }),
+  //     },
+  //   ],
+  // }));
+
+  const titleStyle = useAnimatedStyle(
+    () => ({
+      opacity: interpolate(progress.value, [0, 50], [0, 1], {
+        extrapolateRight: Extrapolation.CLAMP,
+      }),
     }),
-    transform: [
-      {
-        translateX: interpolate(progress.value, [50, 80], [-500, 0], {
-          extrapolateRight: Extrapolation.CLAMP,
-        }),
-      },
-    ],
-  }));
+    [progress],
+  );
 
   return (
-    <Page style={responsivePageContainerStyle}>
-      <View style={styles.contentContainer}>
-        <Animated.View style={[styles.bottomContainer, animatedMyselfStyles]}>
-          <Text style={styles.labelMyself}>
-            I like to internationalise and am open-minded for work opportunities
-            worldwide
-          </Text>
-        </Animated.View>
-        <View style={styles.companies}>
-          <Image
-            source={{
-              uri: 'https://www.ikarussecurity.com/wp-content/uploads/2020/10/IKARUS-logo-claim-300x78-2.png',
-            }}
-            style={{width: 300, height: 78, tintColor: 'white'}}
-          />
-          <Image
-            source={{
-              uri: 'https://assets-global.website-files.com/60ab78ff992bc560336cb1ea/61111f040216b3c7ba1f9e79_Group%2028227.svg',
-            }}
-            style={{width: 288, height: 54}}
-          />
-          <Image
-            source={{
-              uri: 'https://avatars.githubusercontent.com/u/67278693?s=200&v=4',
-            }}
-            style={{width: 60, height: 60, tintColor: 'white'}}
-          />
+    <Page>
+      <Animated.Text style={[styles.whereLabel, titleStyle]}>
+        Where have I worked at?
+      </Animated.Text>
+      <View style={responsivePageContainerStyle}>
+        <View style={styles.contentContainer}>
+          {/*<Animated.View style={[styles.bottomContainer, animatedMyselfStyles]}>*/}
+          {/*  <Text style={styles.labelMyself}>*/}
+          {/*    I like to internationalise and am open-minded for work*/}
+          {/*    opportunities worldwide*/}
+          {/*  </Text>*/}
+          {/*</Animated.View>*/}
+          <ResponsiveCompanies />
         </View>
+        <Map index={index} />
       </View>
-      <Map index={index} />
     </Page>
   );
 }
@@ -72,9 +74,12 @@ function WherePage({index}: PageTypes) {
 const styles = StyleSheet.create({
   pageContainer: {
     flexDirection: 'row',
+    flex: 1,
   },
   columnPageContainer: {
     flexDirection: 'column',
+    marginTop: 35,
+    flex: 1,
   },
   contentContainer: {
     flex: 2,
@@ -84,18 +89,21 @@ const styles = StyleSheet.create({
   },
   labelMyself: {
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: 26,
     color: 'white',
     textAlign: 'center',
-    flex: 1,
+    maxWidth: 250,
+    alignSelf: 'center',
+  },
+  whereLabel: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 30,
+    color: 'white',
+    margin: 20,
   },
   link: {
     marginRight: 10,
-  },
-  companies: {
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    height: '100%',
   },
 });
 

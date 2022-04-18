@@ -15,9 +15,10 @@ type SidebarSectionTypes = {
   label: string;
   index: number;
   offset: string;
+  onPress: any;
 };
 
-function SidebarSection({label, index, offset}: SidebarSectionTypes) {
+function SidebarSection({label, index, offset, onPress}: SidebarSectionTypes) {
   const y = useContext(VerticalPositionContext);
 
   const sectionProgression = useScrollProgression(index, height);
@@ -40,7 +41,7 @@ function SidebarSection({label, index, offset}: SidebarSectionTypes) {
   }));
 
   return (
-    <SidebarSectionContainer style={sectionContainerStyle}>
+    <SidebarSectionContainer style={sectionContainerStyle} onPress={() => onPress(index)}>
       <SidebarSectionLeed>
         <Animated.View style={sectionLeedStyle} />
       </SidebarSectionLeed>

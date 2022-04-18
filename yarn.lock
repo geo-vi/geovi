@@ -9022,6 +9022,11 @@ use-subscription@^1.0.0:
   dependencies:
     object-assign "^4.1.1"
 
+use-web3forms@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/use-web3forms/-/use-web3forms-1.2.1.tgz#0aef764be8d1b15820a04149e531793d4d111e31"
+  integrity sha512-VP2QGuFNJ/XRJ2rizTzSFQv7LsYw+VkxUpiNzIbLAo0fag0TfxE3DsTEplhAsA5/Umu4of2Oxfj+9zPjow+mgg==
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
