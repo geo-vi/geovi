@@ -2,6 +2,7 @@ import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 // @ts-ignore
 import Icon from 'react-native-vector-icons/dist/Feather';
+import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 type MobileHeaderTypes = {
   onPressMenuButton: any;
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     top: 0,
+    paddingTop: getStatusBarHeight(),
     paddingVertical: 5,
     alignItems: 'center',
     flexDirection: 'row',

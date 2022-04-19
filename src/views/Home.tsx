@@ -22,6 +22,10 @@ function Home({onScroll, flatListRef}: HomeTypes) {
       onScroll={onScroll}
       data={PageData}
       renderItem={renderItem}
+      removeClippedSubviews={true}
+      windowSize={2}
+      initialNumToRender={2}
+      maxToRenderPerBatch={2}
     />
   );
 }

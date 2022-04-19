@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 24,
     marginHorizontal: 30,
-    maxWidth: '60vw',
+    maxWidth: '60%',
     textAlign: 'center',
   },
   paragraph: {

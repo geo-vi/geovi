@@ -26,24 +26,22 @@ function MobileLayout({
   }
 
   return (
-    <React.Fragment>
-      <MainContainer>
-        <VerticalProgression>
-          <ProgressBar progress={progress} />
-        </VerticalProgression>
-        {children}
-        <MobileHeader
-          onPressMenuButton={onPressMenuButton}
-          onPressWorkTogether={onPressWorkTogether}
-        />
-      </MainContainer>
+    <MainContainer>
+      <VerticalProgression>
+        <ProgressBar progress={progress} />
+      </VerticalProgression>
+      {children}
+      <MobileHeader
+        onPressMenuButton={onPressMenuButton}
+        onPressWorkTogether={onPressWorkTogether}
+      />
       <MenuModal
         visible={menuOpen}
         onCloseModal={onCloseModal}
         onPageTravel={onPageTravel}
         onPressWorkTogether={onPressWorkTogether}
       />
-    </React.Fragment>
+    </MainContainer>
   );
 }
 

@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-import {View} from 'react-native';
+import React from "react";
+import {useWindowDimensions, View} from 'react-native';
 
-const Page = styled(View)`
-  height: 100vh;
-`;
+function Page({children, style}: any) {
+  const {height} = useWindowDimensions();
+
+  return <View style={[{height}, style]}>{children}</View>;
+}
 
 export default Page;

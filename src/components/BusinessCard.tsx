@@ -11,7 +11,7 @@ function BusinessCard() {
         <Text>me@geovi.dev</Text>
       </View>
       <View style={styles.bottomRightContainer}>
-        geovi.dev
+        <Text>geovi.dev</Text>
       </View>
     </View>
   );
